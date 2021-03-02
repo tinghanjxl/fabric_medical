@@ -1,0 +1,58 @@
+{
+    "name": "medrec-network-org1",
+    "version": "1.0.0",
+    "client": {
+        "organization": "Org1",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                }
+            }
+        }
+    },
+    "channels": {
+        "commonchannel": {
+            "orderers": [
+                "orderer.example.com"
+            ],
+            "peers": 
+                "peer0.org1.example.com"
+        }
+    },
+    "organizations": {
+        "Org1": {
+            "mspid": "Org1MSP",
+            "peers": [
+                "peer0.org1.medrec.com"
+            ],
+            "certificateAuthorities": [
+                "ca.org1.medrec.com"
+            ]
+        }
+    },
+    "peers": {
+        "peer0.org1.medrec.com": {
+            "url": "grpcs://localhost:7051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICUzCCAfqgAwIBAgIRAIjrMP/E6aW7CW7oIISLezAwCgYIKoZIzj0EAwIwdDEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xGDAWBgNVBAoTD29yZzEubWVkcmVjLmNvbTEeMBwGA1UEAxMVdGxz\nY2Eub3JnMS5tZWRyZWMuY29tMB4XDTIwMTAxOTEwMDYwMFoXDTMwMTAxNzEwMDYw\nMFowdDELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcT\nDVNhbiBGcmFuY2lzY28xGDAWBgNVBAoTD29yZzEubWVkcmVjLmNvbTEeMBwGA1UE\nAxMVdGxzY2Eub3JnMS5tZWRyZWMuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcD\nQgAE92kuSVYhOz/REx/Bdw3NQbJbhUXK0Yc8WYKK8leQtUjWeZ6HJxXU1i9NM98+\nDtsb00uaTsYBr6mWuHZKt7Ml6aNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQW\nMBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQi\nBCCzqkOetW46803qKTrU8GxfqJInTnhuj+NZn0YUxcLQZjAKBggqhkjOPQQDAgNH\nADBEAiB6ecbEKJnq8BQv2eXAMdNhIBsPbgJAGA6btTq7K1bAwwIgKuWKNxCbwarn\n/hvpVmMnEH5rHfJr4cgmWP+7JEE6PYQ=\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.org1.medrec.com",
+                "hostnameOverride": "peer0.org1.medrec.com"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "ca.org1.medrec.com": {
+            "url": "https://127.0.0.1:7054",
+            "caName": "ca-org1",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICTTCCAfOgAwIBAgIQZQvHxPS5hpZTwaHgiSPJBTAKBggqhkjOPQQDAjBxMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEYMBYGA1UEChMPb3JnMS5tZWRyZWMuY29tMRswGQYDVQQDExJjYS5v\ncmcxLm1lZHJlYy5jb20wHhcNMjAxMDE5MTAwNjAwWhcNMzAxMDE3MTAwNjAwWjBx\nMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2Fu\nIEZyYW5jaXNjbzEYMBYGA1UEChMPb3JnMS5tZWRyZWMuY29tMRswGQYDVQQDExJj\nYS5vcmcxLm1lZHJlYy5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAR60/y6\nfcnTn/9Vtbf8mUzpt7D9HlhUth9mcyic50slFszSKj8jypHcN5KnNzZ2HtyhG9iP\nsiIDro3rAnEg5jo6o20wazAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYwFAYIKwYB\nBQUHAwIGCCsGAQUFBwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEIIPGltTe\n3NBUom05WsbxVfK8epqrxx4/wcC0/XaRAu3zMAoGCCqGSM49BAMCA0gAMEUCIQDi\nus6IdvBez5KuPmyyhlq2tr19AVDbLi9fd+0K3YBlRAIgOTo7iKfFo6W/hCORm1Iy\nHWkLE09KVXVsfRdeWvST1Ls=\n-----END CERTIFICATE-----\n"
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        }
+    }
+}
